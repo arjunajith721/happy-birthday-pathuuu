@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAthuuuuuuuu THiss is A funnyy survayyy for uuu</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-image: url('background.jpg');
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    color: black;
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: rgba(255, 255, 255, 0.7); /* Add transparency to the background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    text-align: center;
+    color: black;
+  }
+
+  .text {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+
+  form {
+    margin-top: 20px;
+  }
+
+  .question {
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  textarea {
+    width: 100%;
+    height: 100px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    resize: vertical;
+  }
+
+  .next-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    transition: all 0.3s ease;
+  }
+
+  .next-button:hover {
+    background-color: #45a049;
+    transform: scale(1.1); /* Change button size on hover */
+  }
+
+  #gif-container {
+    text-align: center;
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>PAthuuuuuuuu THiss is A funnyy survayyy for uuu</h1>
+  <div class="text"> next is a game waiting for you fathuuuuu! soo clickk on that as many as time u cann</div>
+  <form id="survey-form" action="submit_form.php" method="post">
+    <div class="question">
+      <label for="q1">1. If you were to attend a gala, who would be your ideal companion? And would you consider joining me at one?</label>
+      <input type="text" id="q1" name="q1">
+    </div>
+
+    <div class="question">
+      <label for="q2">2. In your opinion, what's the most romantic gesture someone could make? And would you be open to experiencing it?</label>
+      <input type="text" id="q2" name="q2">
+    </div>
+
+    <div class="question">
+      <label for="q3">3. If you could star in a classic romantic film, which one would it be? And would you let me be your co-star?</label>
+      <input type="text" id="q3" name="q3">
+    </div>
+
+    <div class="question">
+      <label for="q4">4. If you were to receive a bouquet of flowers, what type would you prefer? And would you be interested in receiving one from me?</label>
+      <input type="text" id="q4" name="q4">
+    </div>
+
+    <div class="question">
+      <label for="q5">5. What's your idea of a perfect evening out? And would you be willing to share one with me sometime?</label>
+      <input type="text" id="q5" name="q5">
+    </div>
+
+    <div class="feedback">
+      <label for="feedback">id like to get my website feedbackk bitchh and  after the surveyyy clickk on the submitt buttonn okee</label>
+      <textarea id="feedback" name="feedback"></textarea>
+    </div>
+
+    <input type="submit" value="Submit" style="background-color: #FF5722; border: none; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 5px; cursor: pointer; margin-top: 10px;">
+
+  </form>
+
+  <button class="next-button" id="next-button">Click Here Pathu if u cann</button>
+
+  <!-- Add your GIF container here -->
+  <div id="gif-container" style="display:none; text-align:center;">
+    <img id="cats-chase.gif" src="" alt="GIF">
+  </div>
+</div>
+
+<script>
+  const nextButton = document.getElementById("next-button");
+  let clickCount = 0;
+
+  document.getElementById("survey-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    document.getElementById("survey-form").style.display = "none";
+    nextButton.style.display = "inline-block";
+    // Show the GIF container after submitting the form
+    document.getElementById("gif-container").style.display = "block";
+  });
+
+  nextButton.addEventListener("click", function() {
+    clickCount++;
+    if (clickCount < 1) {
+      nextButton.style.bottom = "10px";
+      nextButton.style.right = "10px";
+    } else {
+      nextButton.style.bottom = `${Math.random() * (window.innerHeight - 50)}px`;
+      nextButton.style.right = `${Math.random() * (window.innerWidth - 50)}px`;
+      if (clickCount === 30) {
+        window.location.href = "pathyy.html"; // Redirect to pathyy.html after 5 clicks
+      }
+    }
+    // Load the GIF
+    document.getElementById("gif-image").src = `gif${clickCount}.gif`;
+  });
+</script>
+
+</body>
+</html>
+
